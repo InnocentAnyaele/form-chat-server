@@ -149,8 +149,8 @@ def createIndexWithChroma(path):
 
 def queryIndexWithChromaFromPersistent(indexKey, query, chatHistory):
     try:
-        # persistent_path = 'src/persistent/' + indexKey
-        persistent_path = '../persistent/' + indexKey
+        persistent_path = 'src/persistent/' + indexKey
+        # persistent_path = '../persistent/' + indexKey
         if (os.path.exists(persistent_path)):    
             vectordb = Chroma(persist_directory=persistent_path, embedding_function=embeddings)
             docs = vectordb.similarity_search(query)
