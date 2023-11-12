@@ -3,8 +3,9 @@ import os
 import shutil
 import threading
 # import json
-# from src.utils.config import Config
-from config import Config
+from src.utils.config import Config
+# use the one below when running on utils.py since it can't access the module as a single file
+# from config import Config
 from langchain.document_loaders import UnstructuredPDFLoader
 from langchain.text_splitter import RecursiveCharacterTextSplitter, CharacterTextSplitter
 from langchain.embeddings.openai import OpenAIEmbeddings
@@ -20,7 +21,8 @@ from langchain.vectorstores import Chroma
 import uuid
 config = Config()
 
-sampleData = './src/data/Restaurant.pdf'
+# sampleData = './src/data/Restaurant.pdf'
+sampleData = '../data/Restaurant.pdf'
 
 # redisLocalHost = 'redis://localhost:6379'
 redisLocalHost = 'redis://127.0.0.1:6379'
