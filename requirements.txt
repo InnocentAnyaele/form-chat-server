@@ -114,7 +114,7 @@ python-iso639==2023.6.15
 python-magic==0.4.27
 python-multipart==0.0.6
 pytz==2023.3.post1
-pywin32==302
+pywin32==306
 pywin32-ctypes==0.2.2
 PyYAML==6.0.1
 rapidfuzz==3.5.2
