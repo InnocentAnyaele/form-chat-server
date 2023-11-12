@@ -3,7 +3,8 @@ import os
 import shutil
 import threading
 # import json
-from src.utils.config import Config
+# from src.utils.config import Config
+from config import Config
 from langchain.document_loaders import UnstructuredPDFLoader
 from langchain.text_splitter import RecursiveCharacterTextSplitter, CharacterTextSplitter
 from langchain.embeddings.openai import OpenAIEmbeddings
@@ -146,7 +147,8 @@ def createIndexWithChroma(path):
 
 def queryIndexWithChromaFromPersistent(indexKey, query, chatHistory):
     try:
-        persistent_path = 'src/persistent/' + indexKey
+        # persistent_path = 'src/persistent/' + indexKey
+        persistent_path = '../persistent/' + indexKey
         if (os.path.exists(persistent_path)):    
             vectordb = Chroma(persist_directory=persistent_path, embedding_function=embeddings)
             docs = vectordb.similarity_search(query)
